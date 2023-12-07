@@ -3,7 +3,6 @@ const argon2 = require('argon2')
 const jwt = require('jsonwebtoken')
 
 const User = require('../models/User')
-const { Model } = require('mongoose')
 
 // @route GET api/auth
 // @desc Check if user is logged in

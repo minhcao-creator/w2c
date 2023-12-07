@@ -12,6 +12,10 @@ const IngredientSchema = new Schema({
 	image: {
 		type: String,
 		required: true
+	},
+	type: {
+		type: Number,
+		enum: [0, 1, 2, 3, 4]
 	}
 })
 

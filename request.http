@@ -1,67 +1,87 @@
-POST http://localhost:5000/api/auth/register
+POST http://localhost:5000/auth/register
 Content-Type: application/json
 
 {
   "username": "minhcao",
-  "email":"cao@gmail.com",
+  "email":"minh@gmail.com",
   "password": "minhcao",
   "phone": "0332060870"
 }
 
 ###
 
-POST http://localhost:5000/api/ingredients
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTZlYmY3NjI5NmY2NjJhMzBkM2Y3ZDYiLCJpYXQiOjE3MDE3NTk5MDd9.ceeQ0GyhZKwEi4xZIMCscSBOhKtoEL2mNpY3LY0JofQ
-
-{
-  "title": "ingredients",
-  "description":"minhcao@gmail.com",
-  "image": "image"
-}
-
-###
-
-POST http://localhost:5000/api/auth/login
+POST http://localhost:5000/auth/login
 Content-Type: application/json
 
 {
-  "email": "minhcao@gmail.com",
+  "email": "minh@gmail.com",
   "password": "minhcao"
 }
 
 ###
 
-POST http://localhost:5000/api/posts
+POST http://localhost:5000/ingredients
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDYxYjk1YjdkMjljZTFiMTA5YmQxZTAiLCJpYXQiOjE2MTczNjIxNjV9.ZTwbrIeDpchmUjkNQv_bmBd7_Maw2Gp7Y1ioZx2s7i8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTcwN2VkMGM3MjdhMTNhYmM1MDA5ZjciLCJpYXQiOjE3MDE5MzU3MjZ9.gxD2oROVUE74EjY3vY0iDfai8hgsK02xqHxsiyvzV5E
 
 {
-  "title": "React",
-  "description": "React",
-  "url": "react.com",
-  "status": "TO LEARN"
+  "title": "ingredient 30",
+  "description":"ingredient ingredient ingredient",
+  "image": "image",
+  "type": 3
 }
 
 ###
 
-GET http://localhost:5000/api/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDYxYjk1YjdkMjljZTFiMTA5YmQxZTAiLCJpYXQiOjE2MTcwMTk3ODF9.ri-nHdgZc1VQTocFLfMgF4_PhFf2TeUVqXLd8tpOkeA
+GET http://localhost:5000/ingredients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTcwN2VkMGM3MjdhMTNhYmM1MDA5ZjciLCJpYXQiOjE3MDE5MDkwMTR9.taIfbNDQWXdD2OTyzBljDD5BHl4vhHCky4nMvkHQHXY
 
 ###
 
-PUT http://localhost:5000/api/posts/6061c25ac2533d41dcae2b19
+POST http://localhost:5000/user/ingredients
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDYxYjk1YjdkMjljZTFiMTA5YmQxZTAiLCJpYXQiOjE2MTcwMTk3ODF9.ri-nHdgZc1VQTocFLfMgF4_PhFf2TeUVqXLd8tpOkeA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTcwN2VkMGM3MjdhMTNhYmM1MDA5ZjciLCJpYXQiOjE3MDE5MDkwMTR9.taIfbNDQWXdD2OTyzBljDD5BHl4vhHCky4nMvkHQHXY
 
 {
-  "title": "Vue",
-  "description": "VUEEEEE",
-  "url": "https://vuejs.org",
-  "status": "LEARNING"
+  "ingredientId": "6571124bfda55e0fc8e05e48"
 }
 
 ###
 
-DELETE http://localhost:5000/api/posts/6061c25ac2533d41dcae2b19
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDYxYjk1YjdkMjljZTFiMTA5YmQxZTAiLCJpYXQiOjE2MTcwMTk3ODF9.ri-nHdgZc1VQTocFLfMgF4_PhFf2TeUVqXLd8tpOkeA
+GET http://localhost:5000/user/ingredients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTcwN2VkMGM3MjdhMTNhYmM1MDA5ZjciLCJpYXQiOjE3MDE5MDkwMTR9.taIfbNDQWXdD2OTyzBljDD5BHl4vhHCky4nMvkHQHXY
+
+###
+
+GET http://localhost:5000/meals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTcwN2VkMGM3MjdhMTNhYmM1MDA5ZjciLCJpYXQiOjE3MDE5MjA2NjN9.YetMf0QIpHakWtpJZefnXtb7OpgcoReBWrjT60AhwI8
+
+###
+
+POST http://localhost:5000/meals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTcwN2VkMGM3MjdhMTNhYmM1MDA5ZjciLCJpYXQiOjE3MDE5MjA2NjN9.YetMf0QIpHakWtpJZefnXtb7OpgcoReBWrjT60AhwI8
+
+{
+  "title" : "meal 10",
+  "ingredients": [
+    "6571218baa349f383085637a",
+    "65713fe9975c89328860693a",
+    "65713ff6975c89328860693d"
+  ],
+  "image": "image",
+  "recipe": "recipe"
+}
+
+POST http://localhost:5000/meals/render
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTcwN2VkMGM3MjdhMTNhYmM1MDA5ZjciLCJpYXQiOjE3MDE5MzU3MjZ9.gxD2oROVUE74EjY3vY0iDfai8hgsK02xqHxsiyvzV5E
+
+{
+  "ingredients": ["ingredient 1", "ingredient 2", "ingredient 3", "ingredient 3", "ingredient 4", "ingredient 5", "ingredient 6", "ingredient 7", "ingredient 8", "ingredient 9", "ingredient 10"]
+}
+
+###

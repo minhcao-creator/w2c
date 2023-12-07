@@ -2,20 +2,23 @@ const express = require('express')
 
 const Ingredient = require('../models/Ingredient')
 
-const getAllIngredient = async (req, res) => {
+const read = async (req, res) => {
     try {
         const ingredients = await Ingredient.find()
-        res.json({ success: true, ingredients })
+        res.json({
+            success: true,
+            ingredients
+        })
     } catch (error) {
         console.log(error)
     }
 }
 
-const createIngredient = async (req, res) => {
-    const { title, description, image } = req.body
+const create = async (req, res) => {
+    const { title, description, image, type } = req.body
 
     try {
-        const newIngredient = new Ingredient({title, description, image})
+        const newIngredient = new Ingredient({ title, description, image, type })
         await newIngredient.save()
         res.json({ success: true, newIngredient })
     } catch (error) {
@@ -23,4 +26,4 @@ const createIngredient = async (req, res) => {
     }
 }
 
-module.exports = { getAllIngredient, createIngredient }
+module.exports = { read, create }

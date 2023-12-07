@@ -4,7 +4,9 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 
 const authRouter = require('./routes/auth')
-const ingredientRouter=require('./routes/ingredient')
+const ingredientRouter = require('./routes/ingredient')
+const userRouter = require('./routes/user')
+const mealRouter = require('./routes/meal')
 // const postRouter = require('./routes/post')
 
 const connectDB = async () => {
@@ -32,8 +34,10 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.use('/api/auth', authRouter)
-app.use('/api/ingredients', ingredientRouter)
+app.use('/auth', authRouter)
+app.use('/ingredients', ingredientRouter)
+app.use('/user', userRouter)
+app.use('/meals', mealRouter)
 // app.use('/api/posts', postRouter)
 
 const PORT = process.env.PORT || 5000
